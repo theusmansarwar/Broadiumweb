@@ -1,0 +1,106 @@
+.pricing-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+}
+
+.card-header {
+  display: flex;
+
+}
+.card-left{
+    background-color: var(--tertiory-color);
+    height: 100px;
+    width: 90px;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-right-radius: var(--border-radius-secondary);
+    border-bottom-left-radius: var(--border-radius-secondary);
+}
+.card-right-triangle {
+    width: 15px;
+    height: 15px;
+    background-image: radial-gradient(circle at 100% 100%, transparent 0%, transparent 15px, var(--tertiory-color) 15px);
+  }
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.month {
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.plan-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin:9%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.features li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+
+.installation {
+  font-size: 14px;
+  margin-top: 10px;
+  width: 80%;
+  padding-top: 10px;
+  margin-left: 10%;
+  text-align: left;
+border-top: 1px solid black;
+}
+
+.get-started {
+  background: var(--primary-color);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius-secondary);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.get-started svg {
+  margin-left: 8px;
+}
+
+.bottom-area {
+  background-color: var(--primary-color);
+  height: 80px;
+  border-bottom-right-radius: var(--border-radius-secondary);
+  border-bottom-left-radius: var(--border-radius-secondary);
+  display: flex;
+  justify-content: center;
+}

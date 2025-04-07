@@ -50,6 +50,7 @@
 .company-list img {
   height: 60px;
   width: auto;
+
 }
 
 /* ZIP Code Input Area */
@@ -80,13 +81,21 @@
   position: absolute;
 }
 
-.zipcode-area input {
+.input-feild{
+ border: 1px solid  var(--secondary-color);
+ padding: 1px;
+ width: 300px;
+ display: flex;
+ align-items: center;
+ border-radius: var(--border-radius-secondary);
+}
+.input-feild input {
   background-color: white;
   padding: 5px;
-  width: 300px;
-  border-radius: var(--border-radius-secondary);
-  outline-color: var(--secondary-color);
-  border-color: gray;
+ width: 270px;
+  
+  outline: none;
+  border: none;
   position: relative;
 }
 
@@ -178,10 +187,13 @@
 @media (max-width: 767px) {
   .company-list {
     flex-wrap: wrap;
+    gap: 0;
+    
   }
   .company-list img {
     flex: 0 1 calc(100% / 3 - 15px);
     height: 30px;
+ 
   }
 }
 
@@ -192,25 +204,39 @@
     height: 100%;
   }
 
-  /* ZIP Code Input Area */
   .zipcode-area {
     width: 300px;
   }
 
-  .zipcode-area .zipcode-section {
+  .zipcode-area .zipcode-section,
+  .dropdown-list {
     width: 270px;
   }
+  
 
-  .zipcode-area input {
+  .input-feild{
+    border: 1px solid  var(--secondary-color);
+    padding: 1px;
     width: 180px;
-  }
-
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-secondary);
+   }
+   .input-feild input {
+     background-color: white;
+     padding: 5px;
+    width: 150px;
+     
+     outline: none;
+     border: none;
+     position: relative;
+   }
   .dropdown-list {
     max-width: 100%;
   }
   .Hero-section {
    
-    height: 480px;
+    height: 460px;
     
   }
 }

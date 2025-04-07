@@ -1,123 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Services.css";
-import dot from "../../Assets/dotsdesign.webp";
-import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import ServiceTemplate from "../../Templates/ServiceTemplate";
-import { fetchServices } from "../../DAL/fetch";
-import { baseUrl } from "../../Config/Config";
-import ServiceSkeleton from "../Skeletonloaders/ServiceSkeleton";
+
+import service1 from '../../Assets/service1.svg'
+import service2 from '../../Assets/service2.svg'
+import service3 from '../../Assets/service3.svg'
+import service4 from '../../Assets/service4.svg'
+
+const serviceData = [
+  {
+    _id: "1",
+    image: service1,
+    name: "Web Development",
+    slug: "web-development",
+    description: "Your favorite shows and movies are chilling out on cable TV, satellite TV, and online streaming services. We’ll break down all these TV options so you can find your favorite way to tune in.",
+  },
+  {
+    _id: "2",
+    image: service2,
+    name: "Graphic Design",
+    slug: "graphic-design",
+    description: "Your favorite shows and movies are chilling out on cable TV, satellite TV, and online streaming services. We’ll break down all these TV options so you can find your favorite way to tune in.",
+  },
+  {
+    _id: "3",
+    image: service3,
+    name: "SEO Optimization",
+    slug: "seo-optimization",
+    description: "Your favorite shows and movies are chilling out on cable TV, satellite TV, and online streaming services. We’ll break down all these TV options so you can find your favorite way to tune in.",
+  },
+  {
+    _id: "4",
+    image: service4,
+    name: "Digital Marketing",
+    slug: "digital-marketing",
+    description: "Your favorite shows and movies are chilling out on cable TV, satellite TV, and online streaming services. We’ll break down all these TV options so you can find your favorite way to tune in.",
+  },
+];
 
 const Services = () => {
-  const navigate = useNavigate();
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth <= 768 ? 1 : 3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth <= 768 ? 1 : 3);
-      setPage(1);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    getServices();
-  }, [page, itemsPerPage]);
-
-  const getServices = async () => {
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetchServices(itemsPerPage, page);
-      if (response?.services) {
-        setServices(response.services);
-        setTotalPages(response.totalPages);
-      } else {
-        throw new Error(response.message || "Failed to fetch services");
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const nextService = () => {
-    if (page < totalPages) {
-      setPage((prev) => prev + 1);
-    }
-  };
-
-  const prevService = () => {
-    if (page > 1) {
-      setPage((prev) => prev - 1);
-    }
-  };
 
   return (
     <div className="services-section">
-      <img src={dot} alt="dot" className="dot1" />
-      <img src={dot} alt="dot" className="dot2" />
       <div className="service-section">
-        <div className="upper-section">
-          <h1>
-            We Build Best <br /> <span>SERVICE</span> Experience
-          </h1>
-          <p onClick={() => navigate(`/services`)}>
-            View All Services <FaArrowRightLong />
-          </p>
-        </div>
-
-       
-        {loading ? (
-          <ServiceSkeleton/>
-        ) : error ? (
-          <p className="error-message">{error}</p>
-        ) : services.length === 0 ? (
-          <p>No services available</p>
-        ) : ( <div className="service-area-section">
-            <div className="service-grid" >
-            {services.map((service) => (
-              <ServiceTemplate
-                key={service._id}
-                image={baseUrl + service.image}
-                name={service.name}
-                slug={service.slug}
-                description={service.introduction}
-              />
-            ))}
-            </div>
-            </div>
-          )}
-        
-       
-
-        <div className="pagination-buttons">
-          <FaArrowLeftLong
-            onClick={prevService}
-            className={`prev-btn ${page === 1 ? "disabled" : ""}`}
-          />
-
-          {[...Array(totalPages)].map((_, i) => (
-            <span
-              key={i}
-              onClick={() => setPage(i + 1)}
-              className={`dott ${page === i + 1 ? "Active" : ""}`}
-            ></span>
+        <div className="service-grid">
+          {serviceData.map((service) => (
+            <ServiceTemplate
+              key={service._id}
+              image={service.image}
+              name={service.name}
+              slug={service.slug}
+              description={service.description}
+            />
           ))}
-
-          <FaArrowRightLong
-            onClick={nextService}
-            className={`next-btn ${page === totalPages ? "disabled" : ""}`}
-          />
         </div>
       </div>
     </div>

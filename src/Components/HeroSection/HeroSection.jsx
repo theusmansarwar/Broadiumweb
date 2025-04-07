@@ -95,6 +95,7 @@ const HeroSection = () => {
             <div className="zipcode-area">
               <div className="zipcode-section"></div>
               <div className="input-area">
+                <div className="input-feild">
                 <input
                   type="text"
                   placeholder="Enter ZIP Code"
@@ -104,6 +105,8 @@ const HeroSection = () => {
                 {zipCode && (
                   <IoClose className="clear-icon" onClick={clearInput} />
                 )}
+                </div>
+                
                 <div className="find-btn">Find <IoLocationSharp /></div>
               </div>
 

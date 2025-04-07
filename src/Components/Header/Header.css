@@ -4,6 +4,7 @@
   width: 100% !important;
   max-width: 100% !important;
   
+  
 }
 .header a {
   text-decoration: none;
@@ -19,9 +20,10 @@
   height: 50px;
 }
 .header {
-  width: var(--default-width);
-  margin-left: var(--side-padding);
-  margin-right: var(--side-padding);
+  width: 100%;
+  
+  padding-left: var(--side-padding);
+ 
   position: fixed;
   z-index: 3;
   background-color: white;
@@ -31,17 +33,30 @@
   margin-left: var(--side-padding);
   margin-right: var(--side-padding);
   text-align: center;
+
 }
 .heading-area p{
   font-size: 36px;
   font-weight: 700;
   line-height: 1;
 }
+
 .heading-area p span{
  color: var(--secondary-color);
 }
 
-
+.heading-area .sub-heading{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: var(--default-width2);
+  margin-left: var(--side-padding2);
+  margin-right: var(--side-padding2);
+ 
+}
 .menu-item {
   padding: 5px;
   margin: 5px;
@@ -67,10 +82,12 @@
 
 .menu-item:last-child {
   padding: 5px;
-  background-color: white;
-  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  margin-right:-1px ;
+  border-top-left-radius: var(--border-radius-secondary);
+  border-bottom-left-radius: var(--border-radius-secondary);
   border-style: none;
-  color: var(--secondary-color);
+  color: white;
   border: 2px solid var(--secondary-color);
   padding: 5px 15px;
 }
@@ -93,10 +110,32 @@
   }
   .header {
     width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
+   
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
     position: fixed;
     background-color: white;
   }
-
+  .heading-area .sub-heading{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: var(--default-width);
+    margin-left: var(--side-padding);
+    margin-right: var(--side-padding);
+   
+  }
+  .menu-item:last-child {
+    padding: 5px;
+    background-color: var(--secondary-color);
+    margin-right:1px ;
+    border-radius: var(--border-radius-secondary);
+    border-style: none;
+    color: white;
+    border: 2px solid var(--secondary-color);
+   width: 100%;
+  }
 }

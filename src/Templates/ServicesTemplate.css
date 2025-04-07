@@ -1,0 +1,59 @@
+.service-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow:var(--all-side-box-shadow);
+  }
+  
+  .service-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .service-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .service-description {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .btn-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  .service-button {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-top-left-radius:var(--border-radius-secondary);
+    border-bottom-left-radius:var(--border-radius-secondary);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    
+    width: 50%;
+  }
+  .service-button-secondary{
+    width: 30%;
+    height: 50px;
+    background-color: white;
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-left: -1px;
+    box-shadow: var(--all-side-box-shadow);
+    border-radius: var(--border-radius-secondary);
+  }
+  
+  
+ 
+  

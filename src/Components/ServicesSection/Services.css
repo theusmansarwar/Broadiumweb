@@ -1,34 +1,14 @@
 .services-section {
-  position: relative;
-
-  width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
-.dot2 {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  right: 2%;
-  height: 30vh;
-}
-.dot1 {
-  display: flex;
-  position: absolute;
-  left: 2%;
-  top: 0;
-  height: 20vh;
-}
+
 .service-section {
   width: var(--default-width);
 }
 
-.Services-grid {
-  display: flex;
-  justify-content: space-between;
-}
 .upper-section {
   display: flex;
   width: 100%;
@@ -37,12 +17,14 @@
   align-items: center;
   margin-top: 50px;
 }
+
 .upper-section h1 {
   font-size: var(--fontsize-heading);
   font-weight: 700;
   line-height: 1;
   width: 40%;
 }
+
 .upper-section p {
   width: 40%;
   display: flex;
@@ -50,28 +32,50 @@
   align-content: center;
   align-items: center;
   gap: 5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling effect */
   cursor: pointer;
 }
 
 .upper-section p:hover {
-  transform: scale(1.02);
   color: var(--primary-color);
 }
 
-.upper-section h1 span {
-  color: var(--secondary-color);
+/* Responsive Grid */
+.service-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 items per row */
+}
+
+@media (max-width: 1240px) {
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr); /* Tablet: 3 items per row */
+  }
 }
 
 @media (max-width: 768px) {
-  .upper-section {
-    flex-direction: column;
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 items per row */
   }
-  .upper-section h1 {
-    width: 100%;
-    font-size: var(--fontsize-heading-responsive);
+}
+@media (max-width: 560px) {
+  .service-grid {
+    grid-template-columns: repeat(1, 1fr); /* Mobile: 2 items per row */
   }
-  .upper-section p {
-    width: 100%;
-  }
+}
+
+/* Pagination */
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.prev-btn, .next-btn {
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

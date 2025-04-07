@@ -1,0 +1,121 @@
+.why-us-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.why-us-section .left {
+  height: 500px;
+  width: 65%;
+}
+.why-us-section .right {
+  height: 500px;
+  width: 35%;
+}
+
+.why-us-section .left .imgs-section {
+  height: 500px;
+  width: 100%;
+  display: flex;
+}
+.why-us-section .left .imgs-section .large-img {
+  height: 100%;
+  width: 70%;
+  border-radius: var(--border-radius);
+}
+.why-us-section .left .imgs-section .small-img-section {
+  height: 100%;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+.why-us-section .left .imgs-section .small-img-section .top-img {
+  height: 200px;
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  border-radius: var(--border-radius);
+}
+.why-us-section .left .imgs-section .small-img-section .lower-img {
+  height: 290px;
+  margin-top: 10px;
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  border-radius: var(--border-radius);
+}
+.why-us-section .right .top-text {
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  margin-top: 10px;
+}
+.why-us-section .right ul {
+  list-style: none;
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  padding: 0%;
+  margin-top: 10px;
+}
+.why-us-section .right ul li {
+  display: flex;
+  width: 100%;
+  height: 140px;
+}
+.why-us-section .right ul li p:first-child {
+  margin: 0%;
+  padding: 0%;
+  font-weight: 700;
+}
+.why-us-section .right ul li img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+@media (max-width: 760px) {
+  .why-us-section {
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .why-us-section .left {
+    height: 300px;
+    width: 100%;
+  }
+  .why-us-section .right {
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+  }
+  .why-us-section .left .imgs-section {
+    height: 300px;
+    width: 100%;
+    display: flex;
+  }
+  .why-us-section .left .imgs-section .large-img {
+    width: 100%;
+  }
+  .why-us-section .left .imgs-section .small-img-section {
+    display: none;
+  }
+  .why-us-section .right ul {
+    width: 100%;
+    margin: 0%;
+  }
+  .why-us-section .right ul li {
+    height: 110px;
+  }
+
+  .why-us-section .right .top-text {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
