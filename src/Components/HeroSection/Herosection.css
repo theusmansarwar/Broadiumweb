@@ -7,6 +7,15 @@
   margin-bottom: 20px;
   border-radius: var(--border-radius);
 }
+.Hero-section2 {
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  height: 350px;
+  background-color: var(--tertiory-color);
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+}
 
 .feature-section {
   background-color: var(--primary-transparent-color);

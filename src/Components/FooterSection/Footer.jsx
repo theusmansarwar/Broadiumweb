@@ -76,26 +76,24 @@ const Footer = () => {
               <h4>Office</h4>
               <ul>
                 <li>
-                 <a  href="mailto:company@zemalt.com"
+                 <a  href="mailto:support@broadium.net"
               target="_blank"
-              rel="noopener noreferrer"><FaEnvelope /> company@zemalt.com</a> 
+              rel="noopener noreferrer"><FaEnvelope /> support@broadium.net</a> 
                 </li>
                
                 <li >
-                <a  href="http://wa.me/923007044566"
-              target="_blank"
-              rel="noopener noreferrer">
-                  <FaPhone /> +92-(300)-7044-566
-                  </a>
+             
+                  <FaPhone /> +1 800 372 7981
+              
                 </li>
                 <li>
                 <a
-                href="https://maps.app.goo.gl/owK9zDzZBdNGzWrL7"
+                href="https://maps.app.goo.gl/znKmZeRgU9sRG3BF6"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                  <FaMapMarkerAlt /> Plaza 119, Allama Iqbal Rd,Garhi Shahu,
-                  Lahore PK
+                  <FaMapMarkerAlt /> 4419 Centennial Blvd Ste 1060
+                  Colorado Springs, CO 80907 USA
                   </a>
                 </li>
               </ul>

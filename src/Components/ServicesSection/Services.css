@@ -12,17 +12,19 @@
 .upper-section {
   display: flex;
   width: 100%;
-  margin-bottom: var(--span-heading-space);
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
 }
 
 .upper-section h1 {
-  font-size: var(--fontsize-heading);
+
   font-weight: 700;
   line-height: 1;
   width: 40%;
+}
+.upper-section h1 span{
+color: var(--primary-color);
 }
 
 .upper-section p {
@@ -35,9 +37,7 @@
   cursor: pointer;
 }
 
-.upper-section p:hover {
-  color: var(--primary-color);
-}
+
 
 /* Responsive Grid */
 .service-grid {

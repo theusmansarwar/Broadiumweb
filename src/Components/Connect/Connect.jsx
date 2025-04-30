@@ -24,6 +24,11 @@ const internetServices = [
 const Connect = () => {
     const [selectedTV, setSelectedTV] = useState("");
     const [selectedInternet, setSelectedInternet] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
   return (
     <div className="Connect">
       <div className="heading-area">
@@ -38,6 +43,18 @@ const Connect = () => {
       <div className="lower-section">
         <div className="left">
         <div className="service-container">
+        <div className="checkbox-container">
+    
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+          className="checkbox"
+        />
+          <label>
+        I want a bundle
+      </label>
+    </div>
       <select
         value={selectedTV}
         onChange={(e) => setSelectedTV(e.target.value)}
