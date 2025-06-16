@@ -30,7 +30,7 @@
   }
   .contact-form-section .left h3 {
     margin: 10px 0;
-    color: var(--secondary-color);
+    color: var(--primary-color);
   }
   
   .contact-form-section .left .input-group {
@@ -72,9 +72,9 @@
     background-color: var(--primary-color);
   }
   .right-img {
-    background-color: var(--tertiory-color);
+    background-color: #FFDFE6;
     width: 100%;
-    height: 50%;
+    height: 550px;
     margin-bottom: 25px;
     overflow: hidden;
     border-radius: var(--border-radius);
@@ -84,10 +84,10 @@
     object-fit: cover;
   }
   .right-img img {
-    width: 100%;
+   height: 100%;
   }
   .info-box {
-    padding: 20px;
+    padding: 25px;
     background-color: var(--tertiory-color);
     border-radius: 12px;
     border-radius: var(--border-radius);

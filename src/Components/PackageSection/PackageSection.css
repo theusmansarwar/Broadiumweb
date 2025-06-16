@@ -1,0 +1,94 @@
+.pricings-section {
+  width: var(--default-width);
+  margin: 30px var(--side-padding);
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+}
+.pricings-section .top-half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  z-index: 1;
+}
+.pricings-section .pricing-content {
+  position: relative;
+  width: 96%;
+  margin-left: 2%;
+  height: fit-content;
+  padding: 100px 0%;
+  padding-bottom: 50px;
+  z-index: 10;
+}
+.pricings-section .top-half .bg-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.pricings-section .top-half .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.pricings-section .pricing-content .packege-heading-area {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: fit-content;
+  z-index: 11;
+  margin-bottom: 10px;
+}
+.pricings-section .pricing-content .packege-heading-area .title {
+  text-align: center;
+  font-size:var(--heading-size);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0%;
+}
+.pricings-section .pricing-content .packege-heading-area .sub-headings {
+  font-size:var(--text-size);
+  color: var(--text-color);
+  text-align: center;
+  line-height: 1;
+
+}
+.pricings-section .pricing-content .pricing-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1080px) {
+  .pricings-section .pricing-content .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .pricings-section .pricing-content .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricings-section .pricing-content .packege-heading-area .title {
+    font-size: var(--heading-size2);
+    font-weight: 600;
+  }
+  .pricings-section .pricing-content .packege-heading-area .sub-heading {
+    font-size:var(--text-size);
+  }
+}
+@media (max-width: 560px) {
+  .pricings-section .pricing-content .pricing-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pricings-section .pricing-content .packege-heading-area .title {
+    font-size: var(--heading-size2);
+    font-weight: 600;
+  }
+  .pricings-section .pricing-content .packege-heading-area .sub-heading {
+    font-size:var(--text-size);
+  }
+}

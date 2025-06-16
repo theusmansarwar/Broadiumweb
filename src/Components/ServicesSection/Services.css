@@ -11,31 +11,28 @@
 
 .upper-section {
   display: flex;
+  background-color: aqua;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
+ 
   margin-top: 50px;
 }
+.upper-section p{
 
-.upper-section h1 {
-
-  font-weight: 700;
-  line-height: 1;
-  width: 40%;
+width: 60%;
+text-align: left;
 }
-.upper-section h1 span{
+
+.upper-section p:first-child{
+color: black;
+font-size: 46px;
+
+}
+.upper-section p span{
 color: var(--primary-color);
 }
 
-.upper-section p {
-  width: 40%;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
 
 
 

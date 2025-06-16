@@ -7,25 +7,73 @@
   margin-bottom: 20px;
   border-radius: var(--border-radius);
 }
-.Hero-section2 {
-  width: var(--default-width);
-  margin-left: var(--side-padding);
-  margin-right: var(--side-padding);
-  height: 350px;
-  background-color: var(--tertiory-color);
-  margin-bottom: 20px;
-  border-radius: var(--border-radius);
+
+.breadcrumb {
+  padding: 10px 0;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
 }
 
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  color: var(--background-color);
+}
+
+.breadcrumb li::after {
+  content: "|";
+  margin-left: 8px;
+  color: var(--background-color);
+}
+
+.breadcrumb li:last-child::after {
+  content: "";
+  margin: 0;
+}
+
+.breadcrumb a {
+  color: var(--headings-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--shadow-low3);
+  text-decoration: underline;
+}
 .feature-section {
   background-color: var(--primary-transparent-color);
   height: 350px;
   width: 100%;
   border-radius: var(--border-radius);
 }
+.Hero-section2 {
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  height: 300px;
+  background-color: var(--tertiory-color);
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+}
+.feature-section2 {
+  background-color: var(--primary-transparent-color);
+  height: 300px;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
 
 .blackscreen {
-  height: 350px;
+  height: 100%;
   width: 100%;
   border-radius: var(--border-radius);
   background-color: var(--black-transparent-color);
@@ -38,9 +86,21 @@
   width: var(--default-width);
   margin-left: var(--side-padding);
   margin-right: var(--side-padding);
-  color: var(--white-color);
+  color: var(--text-color);
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+}
+.blackscreen .text-section2 {
+  height: 100%;
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   border-radius: var(--border-radius);
 }
@@ -91,7 +151,7 @@
 }
 
 .input-feild{
- border: 1px solid  var(--secondary-color);
+ border: 1px solid  var(--primary-color);
  padding: 1px;
  width: 300px;
  display: flex;
@@ -110,7 +170,7 @@
 
 /* Button */
 .find-btn {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   height: 40px;
   padding: 5px 20px;
@@ -164,7 +224,7 @@
   background: #f0f0f0;
 }
 .clear-icon {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   padding: 3px;
   font-size: 20px;
@@ -224,7 +284,7 @@
   
 
   .input-feild{
-    border: 1px solid  var(--secondary-color);
+    border: 1px solid  var(--primary-color);
     padding: 1px;
     width: 180px;
     display: flex;

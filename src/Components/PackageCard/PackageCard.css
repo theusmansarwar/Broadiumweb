@@ -1,0 +1,99 @@
+.package-card {
+  background-image: url(../../Assets/cardbg1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-secondary);
+  box-shadow: var(--price-box-shadow);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.package-card .package-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.package-card .package-card-header .card-left {
+  background-color: rgba(128, 128, 128, 0.204);
+  padding: 6px 14px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: var(--price-box-shadow);
+  border-radius: var(--border-radius-secondary);
+}
+.package-card .package-card-header .card-left .price {
+  font-size: var(--heading-size2);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.package-card .package-card-header .card-left .month {
+  font-size: var(--heading-size2);
+  font-weight: bold;
+  color:var(--default-text-color);
+}
+.package-card .package-card-header .plan-title {
+  font-size: var(--heading-size2);
+  font-weight: bold;
+  margin-top: 10px;
+}
+.package-card .features {
+  list-style: none;
+  padding: 0;
+  margin: 9%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.package-card .features li {
+  font-size:var(--text-size);
+  margin-bottom: 5px;
+  display: flex;
+  gap: 5px;
+}
+.package-card .features li img {
+  width: 20px;
+  height: 20px;
+}
+.package-card .installation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size:var(--text-size);
+  margin-top: 10px;
+  margin-left: 10%;
+  padding-top: 10px;
+  width: 80%;
+  gap: 2px;
+  border-top: 1px solid var(--primary-color);
+}
+.package-card .installation strong {
+  font-weight: 800;
+}
+.package-card .bottom-area2{
+  display: flex;
+  justify-content: flex-end;
+}
+.package-card .bottom-area2 .service-button-secondary {
+  width: fit-content;
+  background-color: var(--primary-color);
+  padding: 10px 40px;
+  border-radius: var(--border-radius-secondary);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.package-card .bottom-area2 .service-button-secondary svg {
+  font-size: 30px;
+  color:var(--text-color);
+}

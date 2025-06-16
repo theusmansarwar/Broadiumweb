@@ -9,11 +9,11 @@
   border: 1px solid #ddd;
 }
 
-.card-header {
+.pricing-card-header {
   display: flex;
 
 }
-.card-left{
+.pricing-card-left{
     background-color: var(--tertiory-color);
     height: 100px;
     width: 90px;
@@ -24,7 +24,7 @@
     border-bottom-right-radius: var(--border-radius-secondary);
     border-bottom-left-radius: var(--border-radius-secondary);
 }
-.card-right-triangle {
+.pricing-card-right-triangle {
     width: 15px;
     height: 15px;
     background-image: radial-gradient(circle at 100% 100%, transparent 0%, transparent 15px, var(--tertiory-color) 15px);
@@ -43,13 +43,13 @@
   color: black;
 }
 
-.plan-title {
+.pricing-plan-title {
   font-size: 20px;
   font-weight: bold;
   margin: 20px 20px;
 }
 
-.features {
+.pricing-features {
   list-style: none;
   padding: 0;
   margin:9%;
@@ -58,7 +58,7 @@
   text-align: left;
 }
 
-.features li {
+.pricing-features li {
   font-size: 14px;
   margin-bottom: 5px;
   display: flex;
@@ -66,7 +66,7 @@
 }
 
 
-.installation {
+.pricing-installation {
   font-size: 14px;
   margin-top: 10px;
   width: 80%;
@@ -76,7 +76,7 @@
 border-top: 1px solid black;
 }
 
-.get-started {
+.pricing-get-started {
   background: var(--primary-color);
   color: white;
   font-size: 14px;
@@ -92,7 +92,7 @@ border-top: 1px solid black;
   margin-top: 15px;
 }
 
-.get-started svg {
+.pricing-get-started svg {
   margin-left: 8px;
 }
 

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Contact.css";
-import backgroundimg from "../../Assets/backgroundimage.webp";
 import { LuMapPin } from "react-icons/lu";
 import { MdOutlineMailOutline, MdOutlinePhone } from "react-icons/md";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import { createLead } from "../../DAL/create";
 import CustomAlert from "../../Components/Alert/CustomAlert";
-
+import contactimg from '../../Assets/Frame 43.png'
+import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -123,29 +123,18 @@ const Contact = () => {
         <p>
           Find Cable <span>TV & Internet</span> Providers Nearby
         </p>
+         <p>
+            We’re here to help you take your brand to the next level. Whether
+            you have a project in mind, need support, or just want to learn more
+            about what we do, we’d love to hear from you.
+          </p>
       </div>
-      <div className="Hero-section2">
-        <div
-          className="feature-section"
-          style={{
-            backgroundImage: `url(${backgroundimg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transition: "background-image 0.8s ease-in-out",
-          }}
-        >
-          <div className="blackscreen">
-            <div className="text-section2">
-              <h1>Contact Us</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+     <Breadcrumb/>
       <div className="contact-section">
         <div className="upper-section">
-          <h1>
-            Let’s Bring Your <br /> <span>Vision</span> To <span>Life!</span>
-          </h1>
+          <p>
+            Let’s Bring Your  <span>Vision</span> To <span>Life!</span>
+          </p>
           <p>
             We’re here to help you take your brand to the next level. Whether
             you have a project in mind, need support, or just want to learn more
@@ -269,6 +258,10 @@ const Contact = () => {
           </div>
 
           <div className="right">
+            <div className="right-img">
+              <img src={contactimg}/>
+
+            </div>
             <div className="info-box">
               <a
                 href="mailto:company@zemalt.com"

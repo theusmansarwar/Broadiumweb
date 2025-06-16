@@ -5,6 +5,7 @@ import Index from "./Pages/Index";
 import "./App.css";
 import NotFound from "./Pages/NotFound/NotFound";
 import Contact from "./Pages/Contact/Contact";
+import Tv from "./Pages/Tv/Tv";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/tv" element={<Tv />} />
       </Routes>
       </div>
       <Footer />

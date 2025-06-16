@@ -1,13 +1,16 @@
 :root {
-  --primary-color: #BB0025;
+ --primary-color: #BB0025;
   --black-transparent-color: #000000af;
-  --secondary-color: #BB0025;
-  --fourth-color: #ff0101;
-  --tertiory-color:#D9D9D980;
+  --tertiory-color: #d9d9d980;
+  --text-color:white;
+  --default-text-color:black;
+  --heading-size:36px;
+  --heading-size2:24px;
+  --text-size:16px;
   --border-radius: 20px;
   --border-radius-secondary: 6px;
   --all-side-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.733);
-  --all-side-box-shadow2: 0px 0px 3px #334eac;
+  --price-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.262);
   --default-width: 94%;
   --side-padding: 3%;
   --default-width2: 74%;
@@ -27,6 +30,45 @@
   border:1px solid white;
   border-radius: var(--border-radius);
   color: white;
+  z-index: 2000;
+}
+.heading-area{
+  width: var(--default-width);
+  margin-left: var(--side-padding);
+  margin-right: var(--side-padding);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+.heading-area p{
+  font-size: var(--heading-size);
+  font-weight: 700;
+  line-height: 1;
+}
+.heading-area p:last-child{
+  font-size: var(--text-size);
+  font-weight: 400;
+  line-height: 1;
+  width: 80%;
+}
+.heading-area p span{
+ color: var(--primary-color);
+}
+
+.heading-area .sub-heading{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: var(--default-width2);
+  margin-left: var(--side-padding2);
+  margin-right: var(--side-padding2);
+ 
 }
 @media (max-width: 1000px) {
   :root {
@@ -54,6 +96,7 @@
     font-weight: 700;
     line-height: 1;
   }
+  
   .main-content{
     padding-top: 75px;
   }

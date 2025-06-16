@@ -1,0 +1,146 @@
+.first-section {
+  display: flex;
+  gap: 10px;
+  width: var(--default-width);
+ margin: 30px var(--side-padding);
+ height: fit-content;
+}
+.first-section .right {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  height: fit-content;
+}
+.top-img-section{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.bottom-img-section{
+  width: 100%;
+  display: flex;
+ margin-top: -125px;
+align-items: flex-end;
+}
+.top-image1 {
+
+width: 105px;
+  height: 105px;
+  margin: 10px;
+
+}
+.top-image {
+  background-image: url(../../Assets/watching1.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius:var(--border-radius-secondary);
+  width: 60%;
+  height: 250px;
+    box-shadow: -3px 4px 3px rgba(0, 0, 0, 0.338);
+
+}
+.bottom-image {
+  background-image: url(../../Assets/watching3.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius:var(--border-radius-secondary);
+  width: 60%;
+  height:250px;
+  box-shadow: 3px -4px 3px rgba(0, 0, 0, 0.338);
+
+}
+.bottom-image1{
+  height: 55px;
+  width: 55px;
+  margin: 10px;
+  margin-bottom: 60px;
+}
+.first-section .left {
+  max-width: 50%;
+  width: fit-content;
+}
+.first-section .left p:first-child {
+  font-size: var(--heading-size);
+  margin-bottom: 20px;
+  color: var(--default-text-color);
+  font-weight: 700;
+}
+ .first-section .left p span {
+  color: var(--primary-color);
+}
+.first-section .left p {
+  font-size: var(--text-size);
+  color: var(--default-text-color);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+@media (max-width: 900px) {
+  .first-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    width: calc(100%-40px);
+  }
+  .first-section .right {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-stack {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+
+  .first-section .left {
+    max-width: 100%;
+    width: fit-content;
+  }
+
+
+
+  .bottom-img-section{
+
+ margin-top: -90px;
+}
+.top-image1 {
+width: 70px;
+  height: 70px;
+  margin: 10px;
+
+}
+.top-image {
+
+  height: 180px;
+
+}
+.bottom-image {
+
+  height:180px;
+
+}
+.bottom-image1{
+   
+  height: 50px;
+  width: 50px;
+  margin-bottom: 30px;
+}
+}
