@@ -6,6 +6,7 @@ import "./App.css";
 import NotFound from "./Pages/NotFound/NotFound";
 import Contact from "./Pages/Contact/Contact";
 import Tv from "./Pages/Tv/Tv";
+import Streaming from "./Pages/Streaming/Streaming";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tv" element={<Tv />} />
+        <Route path="/streaming" element={<Streaming />} />
       </Routes>
       </div>
       <Footer />

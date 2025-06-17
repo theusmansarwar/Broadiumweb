@@ -1,0 +1,95 @@
+.driving-success {
+  width: var(--default-width);
+  margin: 30px var(--side-padding);
+  display: flex;
+  gap: 10px;
+}
+.driving-success .left-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.driving-success .left-container .image-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.driving-success .left-container .image-container .yt-container {
+  width: 49%;
+  border-radius: var(--border-radius-secondary);
+  background-color: gainsboro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.driving-success .left-container .image-container .yt-container .yt-image {
+  width: 70%;
+  height: auto;
+  background-color: gainsboro;
+}
+.driving-success .left-container .left-image {
+  width: 49%;
+  height: 200px;
+  border-radius: var(--border-radius-secondary);
+  object-fit: cover;
+}
+.driving-success .left-container .card-text {
+  min-height: 240px;
+  height: fit-content;
+  background-color: #bb002546;
+  border-radius: var(--border-radius-secondary);
+  padding: 30px;
+  padding-right: 20%;
+  color:var(--default-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.driving-success .left-container .card-text .title {
+  font-weight: 700;
+  font-size: var(--heading-size2);
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.driving-success .left-container .card-text p {
+  font-size: var(--text-size);
+}
+
+.driving-success .right-container {
+  width: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-secondary);
+}
+.driving-success .right-image {
+  width: 70%;
+  height: auto;
+  border-radius: var(--border-radius-secondary);
+}
+@media (max-width: 900px) {
+  .driving-success {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .driving-success .left-container,
+  .driving-success .right-container {
+    width: 100%;
+  }
+  .left-container .image-container {
+    display: none;
+  }
+  .driving-success .right-image {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .left-container .card-text {
+    padding: 15px;
+    padding-right: 5%;
+    height: fit-content;
+  }
+
+}

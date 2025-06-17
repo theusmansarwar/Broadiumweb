@@ -19,6 +19,11 @@ const Index = () => {
         <p>
           Find Cable <span>TV & Internet</span> Providers Nearby
         </p>
+         <p>
+            We’re here to help you take your brand to the next level. Whether
+            you have a project in mind, need support, or just want to learn more
+            about what we do, we’d love to hear from you.
+          </p>
       </div>
 
       <HeroSection />

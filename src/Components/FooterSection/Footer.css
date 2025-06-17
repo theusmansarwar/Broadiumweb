@@ -3,6 +3,8 @@
   color: white;
   padding: 10px 5%;
   font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 3;
 }
 
 .footer-container {

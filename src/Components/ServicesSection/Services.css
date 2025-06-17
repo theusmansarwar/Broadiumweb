@@ -1,4 +1,4 @@
-.services-section {
+.services-sections {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,6 @@
 
 .upper-section {
   display: flex;
-  background-color: aqua;
   align-items: center;
   width: 100%;
   justify-content: space-between;

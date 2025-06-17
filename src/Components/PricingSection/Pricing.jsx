@@ -49,7 +49,7 @@ const Pricing = () => {
       ];
     console.log("Pricing Data:", pricingData); 
   return (
-    <div className="pricings-section" 
+    <div className="pricings-sections" 
      style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
