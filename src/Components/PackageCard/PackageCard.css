@@ -1,8 +1,5 @@
 .package-card {
-  background-image: url(../../Assets/cardbg1.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+ 
   border-radius: var(--border-radius-secondary);
   box-shadow: var(--price-box-shadow);
   text-align: center;

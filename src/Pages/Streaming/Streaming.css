@@ -5,8 +5,7 @@
     top: 0;
     left: 0;
     background-image: url('../../Assets/streambg.png');
-    background-size: cover;           /* Use this instead of object-fit for backgrounds */
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1;                      /* Optional: puts the background behind other content */
+    z-index: -1;                      
 }

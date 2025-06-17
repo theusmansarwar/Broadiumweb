@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./Connect.css";
 import tv from "../../Assets/tv1.svg";
+import cardbg from "../../Assets/streambg.png";
 import { IoPlayForwardOutline } from "react-icons/io5";
 
 const tvServices = [
@@ -21,7 +22,7 @@ const internetServices = [
   "Cox Internet",
   "Verizon Internet",
 ];
-const Connect = () => {
+const Connect = ({type}) => {
     const [selectedTV, setSelectedTV] = useState("");
     const [selectedInternet, setSelectedInternet] = useState("");
     const [isChecked, setIsChecked] = useState(false);
@@ -29,8 +30,24 @@ const Connect = () => {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
+
+  const style =
+    type === "bundle"
+      ?  {
+          backgroundImage: `url(${cardbg})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          marginTop:"-20px"
+        
+        }
+      :
+      {
+        backgroundColor: `var(--tertiory-color)`
+      }
+      ;
   return (
-    <div className="Connect">
+    <div className="Connect" style={style}>
       <div className="heading-area">
         <p>
           Enjoy <span>Sports, Movies, TV Shows</span> & More

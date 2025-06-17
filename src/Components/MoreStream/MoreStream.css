@@ -1,0 +1,71 @@
+.more-stream {
+  display: flex;
+  width: var(--default-width);
+  margin:  0px var(--side-padding);
+  padding: 30px;
+  padding-bottom: 0px;
+}
+.more-stream .left {
+  max-width: 50%;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 20px;
+}
+.more-stream .left .top {
+  display: flex;
+  flex-direction: column;
+}
+.more-stream .left .top p {
+  font-size: var(--heading-size);
+  color: var(--default-text-color);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+.more-stream .left .top p:last-child {
+  color: var(--primary-color);
+  
+}
+.more-stream .left p {
+  font-size: var(--text-size);
+  color: var(--default-text-color);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.more-stream .left .btn {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  padding: 6px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius-secondary);
+  transition: background 0.3s ease;
+  cursor: pointer;
+  box-shadow: var(--price-box-shadow);
+  width: fit-content;
+}
+.more-stream .left .btn:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+.more-stream .right {
+  width: 50%;
+  height: 400px;
+}
+@media (max-width: 900px) {
+  .more-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .more-stream .right {
+    width: 100%;
+    height: 250px;
+  }
+  .more-stream .left {
+    max-width: 100%;
+    width: fit-content;
+  }
+}

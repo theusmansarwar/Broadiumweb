@@ -7,6 +7,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Contact from "./Pages/Contact/Contact";
 import Tv from "./Pages/Tv/Tv";
 import Streaming from "./Pages/Streaming/Streaming";
+import Bundles from "./Pages/Bundles/Bundles";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/tv" element={<Tv />} />
         <Route path="/streaming" element={<Streaming />} />
+        <Route path="/bundles" element={<Bundles />} />
       </Routes>
       </div>
       <Footer />

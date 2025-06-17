@@ -6,7 +6,7 @@
   padding-right: var(--side-padding);
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: var(--tertiory-color);
+  
 }
 .lower-section {
   display: flex;
@@ -38,6 +38,9 @@
 
 .service-and {
   font-size: 18px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .btn-section2 {

@@ -1,17 +1,28 @@
 import checkicon from "../../Assets/check.svg";
 import "./PackageCard.css";
 import { IoPlayForwardOutline } from "react-icons/io5";
-const PackageCard = ({ name, price, features, vat, installation }) => {
+import cardbg from '../../Assets/cardbg1.jpg';
+const PackageCard = ({ name, price, features, vat, installation , type }) => {
+  const style =
+    type === "bundle"
+      ? {
+          backgroundColor: "white",
+        }
+      : {
+          backgroundImage: `url(${cardbg})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        };
   return (
-    <div className="package-card">
+     <div className="package-card" style={style}>
       <div className="package-card-header">
         <p className="plan-title">
           {(() => {
-            const words = name.match(/\b\w+\b/g); // extract only real words
+            const words = name.match(/\b\w+\b/g); 
             if (!words || words.length === 0) return name;
             let wordIndex = 0;
             return name.split(/(\s+)/).map((part, index) => {
-              // Only replace real words
               if (/\b\w+\b/.test(part)) {
                 wordIndex++;
                 if (wordIndex === 2) {
