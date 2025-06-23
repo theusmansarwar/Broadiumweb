@@ -2,15 +2,10 @@ import React from "react";
 import checkicon from "../Assets/check.svg";
 import "./PricingCard.css";
 import { IoPlayForwardOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const PricingCard = ({ name, price, features, vat, installation }) => {
-  console.log("PricingCard Props:", {
-    name,
-    price,
-    features,
-    vat,
-    installation,
-  });
+ const navigate = useNavigate();
   return (
     <div className="pricing-card">
 
@@ -39,7 +34,7 @@ const PricingCard = ({ name, price, features, vat, installation }) => {
       
       <p className="pricing-installation">{vat} {installation}</p>
       <div className="bottom-area">
-        <div className="btn-section">
+        <div className="btn-section" onClick={()=>navigate("/contact-us")}>
           <div className="service-button">Get Started</div>
           <div className="service-button-secondary">
             <IoPlayForwardOutline />

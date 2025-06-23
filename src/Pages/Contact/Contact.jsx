@@ -258,8 +258,8 @@ const Contact = () => {
           </div>
 
           <div className="right">
-            <div className="right-img">
-              <img src={contactimg}/>
+            <div className="right-contact-img">
+              <img className="bg-contact" src={contactimg}/>
 
             </div>
             <div className="info-box">
@@ -271,18 +271,18 @@ const Contact = () => {
                 <div
                   className="info-item"
                   onClick={() =>
-                    window.open("mailto:company@zemalt.com", "_blank")
+                    window.open("mailto:support@broadium.net", "_blank")
                   }
                 >
                   <MdOutlineMailOutline />
                   <div className="assssss">
                     <h4>Email</h4>
-                    <p>company@zemalt.com</p>
+                    <p>support@broadium.net</p>
                   </div>
                 </div>
               </a>
               <a
-                href="http://wa.me/923007044566"
+                href="http://wa.me/18003727981"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -290,7 +290,9 @@ const Contact = () => {
                   <MdOutlinePhone />
                   <div className="assssss">
                     <h4>Phone</h4>
-                    <p>+92-(300)-7044-566</p>
+                    <p>+1-(800)-372-7981
+                         
+                    </p>
                   </div>
                 </div>
               </a>
@@ -303,7 +305,7 @@ const Contact = () => {
                   <LuMapPin />
                   <div className="assssss">
                     <h4>Address</h4>
-                    <p>Plaza 119, Allama Iqbal Rd, Garhi Shahu, Lahore PK</p>
+                    <p>4419 Centennial Blvd Ste 1060 Colorado Springs, CO 80907 USA</p>
                   </div>
                 </div>
               </a>

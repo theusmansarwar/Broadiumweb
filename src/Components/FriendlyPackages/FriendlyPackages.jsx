@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FriendlyPackages.css";
 import PackageCard from "../PackageCard/PackageCard";
+import CallModal from "../CallModal/CallModal";
 const FriendlyPackages = ({ Packages, backgroundColor }) => {
+    const [showModal, setShowModal] = useState(false);
   return (
     <div className="friendly-package" style={{ backgroundColor }}>
       <div className="heading-area">
@@ -10,6 +12,7 @@ const FriendlyPackages = ({ Packages, backgroundColor }) => {
         <p className="description">{Packages.description}</p>
       </div>
       <div className="pricing-grid">
+        {showModal && <CallModal onClose={() => setShowModal(false)} />}
         {Packages.pricingData.map((plan) => (
           <PackageCard
             key={plan._id}
@@ -19,6 +22,7 @@ const FriendlyPackages = ({ Packages, backgroundColor }) => {
             vat={plan.vat}
             installation={plan.installation}
               type="bundle"
+               onServiceClick={() => setShowModal(true)}
           />
         ))}
       </div>

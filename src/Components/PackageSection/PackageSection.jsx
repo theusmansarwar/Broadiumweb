@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PackageSection.css";
 import backgroundImage from "../../Assets/packagebg.jpg";
 import PackageCard from "../PackageCard/PackageCard";
+import CallModal from "../CallModal/CallModal";
 
 const PackageSection = () => {
   const pricingData = [
@@ -45,6 +46,7 @@ const PackageSection = () => {
       installation: "Installation Charge: 500 TK",
     },
   ];
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="pricings-section">
       <div className="top-half">
@@ -60,6 +62,7 @@ const PackageSection = () => {
           </p>
         </div>
         <div className="pricing-grid">
+          {showModal && <CallModal onClose={() => setShowModal(false)} />}
           {pricingData.map((plan) => (
             <PackageCard
               key={plan._id}
@@ -68,6 +71,7 @@ const PackageSection = () => {
               features={plan.features}
               vat={plan.vat}
               installation={plan.installation}
+              onServiceClick={() => setShowModal(true)}
             />
           ))}
         </div>

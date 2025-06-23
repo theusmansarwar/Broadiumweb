@@ -47,8 +47,9 @@
 }
 
 .breadcrumb a:hover {
-  color: var(--shadow-low3);
+  color: var(--primary-color);
   text-decoration: underline;
+
 }
 .feature-section {
   background-color: var(--primary-transparent-color);
@@ -143,7 +144,7 @@
 .zipcode-area .input-area {
   width: 100%;
   height: 100%;
-  gap: 2px;
+  gap: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,10 +176,16 @@
   height: 40px;
   padding: 5px 20px;
   border-radius: var(--border-radius-secondary);
+  border: 1px solid white;
+  box-shadow:  0px 2px 5px rgba(0, 0, 0, 0.733);;
   display: flex;
   align-items: center;
   cursor: pointer;
   margin-left: 15px;
+  transition: 0.3s ease;
+}
+.find-btn:hover{
+  background-color: rgb(231, 14, 57);
 }
 
 /* Loading and Error Messages */
@@ -230,6 +237,7 @@
   padding: 3px;
   font-size: 20px;
   border-radius: 50%;
+  cursor: pointer;
 }
 /* Laptop: Show 6 items in a row */
 @media (min-width: 1024px) {

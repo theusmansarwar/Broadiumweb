@@ -1,0 +1,84 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.call-modal {
+  background: white;
+  width: 350px;
+  border-radius: 12px;
+  padding: 20px;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.call-modal  .close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: gainsboro;
+  padding: 2px;
+}
+.call-modal  .image-container {
+  background-color: gainsboro;
+  border-radius: 6px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.call-modal  .image-container .phone-img {
+  width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+
+.call-modal  h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+.call-modal  p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.call-modal  .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.call-modal  .outlined {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.call-modal  .filled {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

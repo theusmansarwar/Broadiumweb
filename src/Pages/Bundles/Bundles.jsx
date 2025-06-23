@@ -1,16 +1,12 @@
-
-import Breadcrumb from '../../Components/Breadcrumb/Breadcrumb'
-import FriendlyPackages from '../../Components/FriendlyPackages/FriendlyPackages'
-import './Bundles.css'
+import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
+import FriendlyPackages from "../../Components/FriendlyPackages/FriendlyPackages";
+import "./Bundles.css";
 import Spectrum from "../../Assets/spectrum.png";
 import Att from "../../Assets/att.png";
 import Dish from "../../Assets/dish.png";
-import Connect from '../../Components/Connect/Connect';
-import MoreStream from '../../Components/MoreStream/MoreStream';
+import MoreStream from "../../Components/MoreStream/MoreStream";
 const Bundles = () => {
-
-const allPackages = [
-    
+  const allPackages = [
     {
       logo: Att,
       title: "AT&T Combo Deals",
@@ -154,40 +150,31 @@ const allPackages = [
     },
   ];
 
-
-
-
   return (
     <div>
-   
-   <div className="heading-area">
+      <div className="heading-area">
         <p>Get Connected!</p>
         <p>
           Find Cable <span>TV & Internet</span> Providers Nearby
         </p>
-         <p>
-            We’re here to help you take your brand to the next level. Whether
-            you have a project in mind, need support, or just want to learn more
-            about what we do, we’d love to hear from you.
-          </p>
+        <p>
+          We’re here to help you take your brand to the next level. Whether you
+          have a project in mind, need support, or just want to learn more about
+          what we do, we’d love to hear from you.
+        </p>
       </div>
-        <Breadcrumb/>
+      <Breadcrumb />
 
-         <Connect type="bundle"/>
-   {
-    allPackages.map((company, index) => (
+      {allPackages.map((company, index) => (
         <FriendlyPackages
           key={index}
           Packages={company}
           backgroundColor={index % 2 === 0 ? "var(--tertiory-color)" : "white"}
         />
-      ))
-   }
-<MoreStream/>
-        
-        </div>
- 
-  )
-}
+      ))}
+      <MoreStream />
+    </div>
+  );
+};
 
-export default Bundles
+export default Bundles;

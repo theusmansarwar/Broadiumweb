@@ -1,12 +1,12 @@
 :root {
- --primary-color: #BB0025;
+  --primary-color: #bb0025;
   --black-transparent-color: #000000af;
   --tertiory-color: #d9d9d980;
-  --text-color:white;
-  --default-text-color:black;
-  --heading-size:36px;
-  --heading-size2:24px;
-  --text-size:16px;
+  --text-color: white;
+  --default-text-color: black;
+  --heading-size: 36px;
+  --heading-size2: 24px;
+  --text-size: 16px;
   --border-radius: 20px;
   --border-radius-secondary: 6px;
   --all-side-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.733);
@@ -15,24 +15,57 @@
   --side-padding: 3%;
   --default-width2: 74%;
   --side-padding2: 13%;
- 
 }
 
-.main-content{
+.main-content {
   padding-top: 90px;
 }
-.call-now-btn{
-  position: fixed;
+.first-btn {
   background-color: var(--primary-color);
+  position: fixed;
   padding: 10px;
-  right: 5px;
-  bottom: 5vh;
-  border:1px solid white;
-  border-radius: var(--border-radius);
-  color: white;
+  border: 1px solid white;
   z-index: 2000;
+  border-bottom-left-radius: var(--border-radius-secondary);
+  border-top-left-radius: var(--border-radius-secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
-.heading-area{
+
+.first-btn span{
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.first-btn:hover {
+  background-color: #e01840;
+}
+
+.first-btn:hover span{
+  opacity: 1;
+  width: auto; 
+  color: var(--text-color);
+}
+
+
+.first-btn {
+  bottom: 40px;
+  right: 0;
+}
+.first-btn svg{
+  color: var(--text-color);
+}
+
+.heading-area {
   width: var(--default-width);
   margin-left: var(--side-padding);
   margin-right: var(--side-padding);
@@ -41,24 +74,23 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-
 }
-.heading-area p{
+.heading-area p {
   font-size: var(--heading-size);
   font-weight: 700;
   line-height: 1;
 }
-.heading-area p:last-child{
+.heading-area p:last-child {
   font-size: var(--text-size);
   font-weight: 400;
   line-height: 1;
   width: 80%;
 }
-.heading-area p span{
- color: var(--primary-color);
+.heading-area p span {
+  color: var(--primary-color);
 }
 
-.heading-area .sub-heading{
+.heading-area .sub-heading {
   font-size: 22px;
   font-weight: 400;
   line-height: 1;
@@ -68,7 +100,6 @@
   width: var(--default-width2);
   margin-left: var(--side-padding2);
   margin-right: var(--side-padding2);
- 
 }
 @media (max-width: 1000px) {
   :root {
@@ -91,14 +122,34 @@
 
     --team-background-height: 400px;
   }
-  .heading-area p{
+  .heading-area p {
     font-size: 22px;
     font-weight: 700;
     line-height: 1;
   }
-  
-  .main-content{
+
+  .main-content {
     padding-top: 75px;
   }
+  @keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
+  .call-now-btn {
+    border-radius: 50%;
+  }
 
+  .call-now-btn .call-icon {
+    display: block;
+    font-size: 28px;
+    animation: blink 1s infinite;
+  }
+  .call-now-btn span {
+    display: none;
+  }
+}

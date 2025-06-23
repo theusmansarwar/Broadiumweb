@@ -47,7 +47,6 @@ const Pricing = () => {
         },
       
       ];
-    console.log("Pricing Data:", pricingData); 
   return (
     <div className="pricings-sections" 
      style={{

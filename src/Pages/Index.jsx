@@ -2,16 +2,12 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeroSection from "../Components/HeroSection/HeroSection";
 import Services from "../Components/ServicesSection/Services";
-import PricingCard from "../Templates/PricingCard";
 import Pricing from "../Components/PricingSection/Pricing";
 import Whyus from "../Components/WhyUs/Whyus";
 import Movies from "../Components/Movies/Movies";
-import Connect from "../Components/Connect/Connect";
 
 const Index = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top when component mounts
-  }, []);
+ 
   return (
     <div>
       <div className="heading-area">
@@ -60,7 +56,7 @@ const Index = () => {
       </div>
 
       <Movies/>
-      <Connect/>
+      
     </div>
   );
 };

@@ -1,0 +1,9 @@
+.extra-content{
+    width: var(--default-width);
+    margin: 30px var(--side-padding);
+}
+.extra-content .title{
+    font-size: var(--heading-size);
+    color: var(--primary-color);
+    font-weight: 700;
+}

@@ -1,8 +1,16 @@
 import checkicon from "../../Assets/check.svg";
 import "./PackageCard.css";
 import { IoPlayForwardOutline } from "react-icons/io5";
-import cardbg from '../../Assets/cardbg1.jpg';
-const PackageCard = ({ name, price, features, vat, installation , type }) => {
+import cardbg from "../../Assets/cardbg1.jpg";
+const PackageCard = ({
+  name,
+  price,
+  features,
+  vat,
+  installation,
+  type,
+  onServiceClick,
+}) => {
   const style =
     type === "bundle"
       ? {
@@ -15,11 +23,11 @@ const PackageCard = ({ name, price, features, vat, installation , type }) => {
           backgroundRepeat: "no-repeat",
         };
   return (
-     <div className="package-card" style={style}>
+    <div className="package-card" style={style}>
       <div className="package-card-header">
         <p className="plan-title">
           {(() => {
-            const words = name.match(/\b\w+\b/g); 
+            const words = name.match(/\b\w+\b/g);
             if (!words || words.length === 0) return name;
             let wordIndex = 0;
             return name.split(/(\s+)/).map((part, index) => {
@@ -68,7 +76,7 @@ const PackageCard = ({ name, price, features, vat, installation , type }) => {
         <span>{installation}</span>
       </div>
       <div className="bottom-area2">
-        <div className="service-button-secondary">
+        <div className="service-button-secondary" onClick={onServiceClick}>
           <IoPlayForwardOutline />
         </div>
       </div>

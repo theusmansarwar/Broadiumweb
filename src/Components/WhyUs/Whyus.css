@@ -54,6 +54,7 @@
   margin-left: var(--side-padding);
   margin-right: var(--side-padding);
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 .why-us-section .right ul {
   list-style: none;

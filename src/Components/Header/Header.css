@@ -3,27 +3,25 @@
   margin: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
-  
-  
 }
 .header a {
   text-decoration: none;
   color: var(--primary-color);
- 
+
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling effect */
 }
 
-.header a:hover {
+/* .header a:hover {
   transform: scale(1.02);
-}
-.header-logo {
-  height: 50px;
+} */
+.broadium-logo {
+  width: 180px;
 }
 .header {
   width: 100%;
-  
+
   padding-left: var(--side-padding);
- 
+
   position: fixed;
   z-index: 13;
   background-color: white;
@@ -41,27 +39,26 @@
 .menu-item:hover {
   color: var(--primary-color);
   background-color: var(--primary-transparent-color);
-  
 }
 
 .menu-item.active {
   color: var(--primary-color);
-  
+
   border-bottom: 3px solid var(--primary-color);
 }
-
-
 
 .menu-item:last-child {
   padding: 5px;
   background-color: var(--primary-color);
-  margin-right:-1px ;
+  margin-right: -1px;
   border-top-left-radius: var(--border-radius-secondary);
   border-bottom-left-radius: var(--border-radius-secondary);
   border-style: none;
   color: white;
-  border: 2px solid var(--primary-color);
   padding: 5px 15px;
+}
+.menu-item:last-child:hover {
+  background-color: #e01840;
 }
 .navbar-toggler {
   outline: none !important;
@@ -75,20 +72,18 @@
   background-color: var(--primary-transparent-color) !important;
 }
 @media (max-width: 756px) {
-
-  .header-logo{
+  .header-logo {
     height: 30px;
-
   }
   .header {
     width: 100%;
-   
+
     padding-left: var(--side-padding);
     padding-right: var(--side-padding);
     position: fixed;
     background-color: white;
   }
-  .heading-area .sub-heading{
+  .heading-area .sub-heading {
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
@@ -98,16 +93,15 @@
     width: var(--default-width);
     margin-left: var(--side-padding);
     margin-right: var(--side-padding);
-   
   }
   .menu-item:last-child {
     padding: 5px;
     background-color: var(--primary-color);
-    margin-right:1px ;
+    margin-right: 1px;
     border-radius: var(--border-radius-secondary);
     border-style: none;
     color: white;
     border: 2px solid var(--primary-color);
-   width: 100%;
+    width: 100%;
   }
 }

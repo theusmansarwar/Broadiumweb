@@ -11,22 +11,28 @@ import { getDatabase, ref, get } from "firebase/database";
 import { app } from "../../firebaseConfig";
 import { IoLocationSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const database = getDatabase(app);
 
 const HeroSection = () => {
-  const [zipCode, setZipCode] = useState("");
   const [address, setAddress] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedAddress, setSelectedAddress] = useState(null);
+  const [rawZip, setRawZip] = useState("");
+  const [displayZip, setDisplayZip] = useState("");
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const value = e.target.value;
 
     if (/^\d*$/.test(value) && value.length <= 5) {
-      setZipCode(value);
-      
+      setDisplayZip(value);
+      setRawZip(value);
+
       if (value.length < 5) {
         setAddress(null);
         setShowDropdown(false);
@@ -36,6 +42,17 @@ const HeroSection = () => {
       if (value.length === 5) {
         fetchAddressData(value);
       }
+    }
+  };
+
+  const handleClick = () => {
+    if (rawZip && selectedAddress) {
+      const formattedAddress = `${selectedAddress.primary_city}, ${selectedAddress.state}, ${selectedAddress.country}`;
+      const internet = `${selectedAddress.internet}`;
+      const tv = `${selectedAddress.tv}`;
+      navigate(`/zip/${rawZip}/${formattedAddress}/${internet}/${tv}`);
+    } else {
+      setError("Please enter ZIP and select a location.");
     }
   };
 
@@ -67,13 +84,17 @@ const HeroSection = () => {
 
   const handleSelectAddress = () => {
     if (address) {
-      setZipCode(`${address.primary_city}, ${address.state}, ${address.country}`);
+      setSelectedAddress(address);
+
+      setDisplayZip(
+        `${address.primary_city}, ${address.state}, ${address.country}`
+      );
       setShowDropdown(false);
     }
   };
 
   const clearInput = () => {
-    setZipCode("");
+    setDisplayZip("");
     setAddress(null);
     setShowDropdown(false);
     setError("");
@@ -96,18 +117,20 @@ const HeroSection = () => {
               <div className="zipcode-section"></div>
               <div className="input-area">
                 <div className="input-feild">
-                <input
-                  type="text"
-                  placeholder="Enter ZIP Code"
-                  value={zipCode}
-                  onChange={handleInputChange}
-                />
-                {zipCode && (
-                  <IoClose className="clear-icon" onClick={clearInput} />
-                )}
+                  <input
+                    type="text"
+                    placeholder="Enter ZIP Code"
+                    value={displayZip}
+                    onChange={handleInputChange}
+                  />
+                  {displayZip && (
+                    <IoClose className="clear-icon" onClick={clearInput} />
+                  )}
                 </div>
-                
-                <div className="find-btn">Find <IoLocationSharp /></div>
+
+                <div onClick={handleClick} className="find-btn">
+                  Find <IoLocationSharp />
+                </div>
               </div>
 
               {loading && <p className="dropdown-list">Loading...</p>}
@@ -117,7 +140,7 @@ const HeroSection = () => {
                 <ul className="dropdown-list">
                   <li onClick={handleSelectAddress}>
                     <IoLocationSharp />
-                    {address.primary_city}, {address.state}, {address.country}
+                    {address.primary_city}, {address.state}, {address.country},
                   </li>
                 </ul>
               )}

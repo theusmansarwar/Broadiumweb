@@ -11,16 +11,15 @@ import "./Header.css";
 import logo from '../../Assets/logo1.svg'
 
 const Header = () => {
-  const phoneNumber = "+923007044566";
-  const email = "company@zemalt.com";
+  const [expanded, setExpanded] = useState(false);
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "TV", path: "/tv" },
     { name: "Internet", path: "/internet" },
     { name: "Streaming", path: "/streaming" },
     { name: "Bundles", path: "/bundles" },
-    { name: "About Us", path: "/about" },
-    { name: "Contact Us", path: "/contact" },
+    { name: "About Us", path: "/about-us" },
+    { name: "Contact Us", path: "/contact-us" },
   ];
 
   const navigate = useNavigate();
@@ -47,17 +46,16 @@ const Header = () => {
   const handleMenuClick = (item) => {
     setActiveItem(item.name);
     navigate(item.path);
+    setExpanded(false);
   };
 
   return (
     <div className="header">
     
-
-      
-      <Navbar expand="lg">
+      <Navbar expand="lg"  expanded={expanded} onToggle={setExpanded}>
         <Container fluid className="nav-container">
           <Navbar.Brand href="/">
-            <img className="header-logo" src={logo} alt="zemalt.com" />
+            <img className="broadium-logo" src={logo} alt="broadium.net" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
