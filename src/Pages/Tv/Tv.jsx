@@ -1,7 +1,5 @@
 import React from "react";
 import FirstSection from "../../Components/FirstSection/FirstSection";
-
-import backgroundimg from "../../Assets/backgroundimage.webp";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import PackageSection from "../../Components/PackageSection/PackageSection";
 import TVPackages from "../../Components/TVPackages/TVPackages";

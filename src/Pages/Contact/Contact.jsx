@@ -6,134 +6,111 @@ import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import { createLead } from "../../DAL/create";
 import CustomAlert from "../../Components/Alert/CustomAlert";
-import contactimg from '../../Assets/Frame 43.png'
+import contactimg from "../../Assets/Frame 43.png";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
+import { toast, ToastContainer } from "react-toastify";
 const Contact = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  const serviceOptions = ["TV", "INTERNET", "BUNDLES", "STREAMING", "OTHERS"];
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     subject: "",
-    query: "",
+    address: "",
+    service: [],
+    message: "",
   });
 
-  const [alertType, setAlertType] = useState("");
-  const [alertMessage, setAlertMessage] = useState("");
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    if (isSubmitted) {
-      setFormErrors((prevErrors) => ({
-        ...prevErrors,
-        [e.target.name]: e.target.value.trim() ? "" : prevErrors[e.target.name],
-      }));
-    }
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
-  const validateUSPhone = (phone) => {
-    const cleaned = phone.replace(/\D/g, ""); // remove non-digit characters
-    return /^1?\d{10}$/.test(cleaned); // accepts optional "1" at start, then 10 digits
-  };
-
   const handlePhoneChange = (value) => {
-    setFormData({ ...formData, phone: value });
+    setFormData((prev) => ({ ...prev, phone: value }));
+  };
 
-    if (isSubmitted && value) {
-      setFormErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
-    }
+  const handleServiceChange = (e) => {
+    const { value, checked } = e.target;
+    setFormData((prev) => {
+      const updatedServices = checked
+        ? [...prev.service, value]
+        : prev.service.filter((s) => s !== value);
+      return { ...prev, service: updatedServices };
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
 
-    const errors = {};
-
-    // Validate required fields
-    if (!formData.name.trim()) errors.name = "Name is required.";
-    if (!formData.email.trim()) errors.email = "Email is required.";
-    if (!formData.phone.trim()) errors.phone = "Phone is required.";
-    if (!formData.subject.trim()) errors.subject = "Subject is required.";
-    if (!formData.query.trim()) errors.query = "Message is required.";
-
-    // ✅ Custom US phone number validation
-    if (formData.phone && !validateUSPhone(formData.phone)) {
-      errors.phone = "Please enter a valid US phone number.";
-    }
-
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      setAlertType("error");
-      setAlertMessage("Please fix the errors before submitting.");
-      return;
-    }
-
-    const payload = new FormData();
-    payload.append("name", formData.name);
-    payload.append("phone", formData.phone);
-    payload.append("email", formData.email);
-    payload.append("subject", formData.subject);
-    payload.append("query", formData.query);
-
+    const payload = {
+      name: `${formData.name}`,
+      phone: formData.phone,
+      subject: formData.subject,
+      address: formData.address,
+      service: formData.service.join(", "),
+      query: formData.message,
+    };
     try {
-      const response = await createLead(payload);
-      console.log("API Response:", response);
-
-      if (response?.status === 201) {
-        setAlertType("success");
-        setAlertMessage(response?.message);
-        setFormData({ name: "", phone: "", email: "", subject: "", query: "" });
-        setIsSubmitted(false);
-        setFormErrors({});
-      } else if (response?.status === 400 && response?.missingFields) {
-        const apiErrors = {};
-        response.missingFields.forEach((field) => {
-          apiErrors[field.name] = field.message;
+      const res = await createLead(payload);
+      if (res.status === 201) {
+        setStatus("success");
+        toast.success(res?.message || "Form submitted successfully");
+        setErrors({});
+        setFormData({
+          name: "",
+          phone: "",
+          subject: "",
+          address: "",
+          service: [],
+          message: "",
         });
-
-        setFormErrors(apiErrors);
-        setAlertType("error");
-        setAlertMessage(response?.message);
-      } else {
-        setAlertType("error");
-        setAlertMessage(response?.message);
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setAlertType("error");
-      setAlertMessage("Something went wrong. Try again later.");
+      if (res?.status == 400) {
+        const fieldErrors = {};
+        res.missingFields.forEach((field) => {
+          fieldErrors[field.name] = field.message;
+        });
+        setErrors(fieldErrors);
+      }
+    } catch (err) {
+      if (err?.status == 400) {
+        const fieldErrors = {};
+        err.missingFields.forEach((field) => {
+          fieldErrors[field.name] = field.message;
+        });
+        setErrors(fieldErrors);
+        toast.error();
+      } else {
+        setStatus("error");
+      }
     }
   };
 
   return (
     <div>
-      <CustomAlert
-        type={alertType}
-        message={alertMessage}
-        onClose={() => setAlertMessage("")}
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        pauseOnHover={false}
       />
-        <div className="heading-area">
+      <div className="heading-area">
         <p>Get Connected!</p>
         <p>
           Find Cable <span>TV & Internet</span> Providers Nearby
         </p>
-         <p>
-            We’re here to help you take your brand to the next level. Whether
-            you have a project in mind, need support, or just want to learn more
-            about what we do, we’d love to hear from you.
-          </p>
+        <p>
+          We’re here to help you take your brand to the next level. Whether you
+          have a project in mind, need support, or just want to learn more about
+          what we do, we’d love to hear from you.
+        </p>
       </div>
-     <Breadcrumb/>
+      <Breadcrumb />
       <div className="contact-section">
         <div className="upper-section">
           <p>
-            Let’s Bring Your  <span>Vision</span> To <span>Life!</span>
+            Let’s Bring Your <span>Vision</span> To <span>Life!</span>
           </p>
           <p>
             We’re here to help you take your brand to the next level. Whether
@@ -144,17 +121,18 @@ const Contact = () => {
         <div className="contact-form-section">
           <div className="left">
             <h3>Get in Touch</h3>
-            <h1>
+            {/* <h1>
               Let’s Start a<br />
               <span className="highlight">Conversation!</span>
             </h1>
             <p>
               Have questions or feedback? We're here to help. Send us a message,
               and we’ll respond within 24 hours.
-            </p>
+            </p> */}
             <form onSubmit={handleSubmit}>
               <div className="input-field">
                 <label htmlFor="name">Name</label>
+                {errors.name && <p className="error-msg">{errors.name}</p>}
                 <input
                   type="text"
                   id="name"
@@ -163,14 +141,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                 />
-                {formErrors.name && (
-                  <span className="error-message">{formErrors.name}</span>
-                )}
               </div>
               <div className="input-field">
                 <label htmlFor="phone" className="phone-lable">
                   Phone Number
                 </label>
+                {errors.phone && <p className="error-msg">{errors.phone}</p>}
                 <PhoneInput
                   country={"us"}
                   onlyCountries={["us"]}
@@ -199,13 +175,12 @@ const Contact = () => {
                   containerClass="custom-phone-container"
                   buttonClass="custom-phone-flag" // helps hide the flag
                 />
-
-                {formErrors.phone && (
-                  <span className="error-message">{formErrors.phone}</span>
-                )}
               </div>
               <div className="input-field">
                 <label htmlFor="address">Address</label>
+                {errors.address && (
+                  <p className="error-msg">{errors.address}</p>
+                )}
                 <input
                   type="text"
                   id="address"
@@ -214,15 +189,13 @@ const Contact = () => {
                   value={formData.address}
                   onChange={handleChange}
                 />
-                {formErrors.address && (
-                  <span className="error-message">{formErrors.address}</span>
-                )}
               </div>
-
-             
 
               <div className="input-field">
                 <label htmlFor="subject">Subject</label>
+                {errors.subject && (
+                  <p className="error-msg">{errors.subject}</p>
+                )}
                 <input
                   type="text"
                   id="subject"
@@ -231,13 +204,33 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                 />
-                {formErrors.subject && (
-                  <span className="error-message">{formErrors.subject}</span>
+              </div>
+              <div className="checkbox-container">
+                <p className="service-label required-label">
+                  Services Interested In
+                </p>
+                {errors.service && (
+                  <p className="error-msg">{errors.service}</p>
                 )}
+                <div className="checkbox-grid">
+                  {serviceOptions.map((service) => (
+                    <div className="checkbox-item" key={service}>
+                      <input
+                        type="checkbox"
+                        id={service}
+                        value={service}
+                        checked={formData.service.includes(service)}
+                        onChange={handleServiceChange}
+                      />
+                      <label htmlFor={service}>{service}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="input-field">
                 <label htmlFor="message">Message</label>
+                {errors.query && <p className="error-msg">{errors.query}</p>}
                 <textarea
                   id="message"
                   name="query"
@@ -246,9 +239,6 @@ const Contact = () => {
                   value={formData.query}
                   onChange={handleChange}
                 ></textarea>
-                {formErrors.query && (
-                  <span className="error-message">{formErrors.query}</span>
-                )}
               </div>
 
               <button className="send-btn" type="submit">
@@ -259,8 +249,7 @@ const Contact = () => {
 
           <div className="right">
             <div className="right-contact-img">
-              <img className="bg-contact" src={contactimg}/>
-
+              <img className="bg-contact" src={contactimg} />
             </div>
             <div className="info-box">
               <a
@@ -290,9 +279,7 @@ const Contact = () => {
                   <MdOutlinePhone />
                   <div className="assssss">
                     <h4>Phone</h4>
-                    <p>+1-(800)-372-7981
-                         
-                    </p>
+                    <p>+1-(800)-372-7981</p>
                   </div>
                 </div>
               </a>
@@ -305,7 +292,10 @@ const Contact = () => {
                   <LuMapPin />
                   <div className="assssss">
                     <h4>Address</h4>
-                    <p>4419 Centennial Blvd Ste 1060 Colorado Springs, CO 80907 USA</p>
+                    <p>
+                      4419 Centennial Blvd Ste 1060 Colorado Springs, CO 80907
+                      USA
+                    </p>
                   </div>
                 </div>
               </a>

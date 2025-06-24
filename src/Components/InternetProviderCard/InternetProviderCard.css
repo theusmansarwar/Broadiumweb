@@ -1,0 +1,80 @@
+.internet-provider-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.internet-provider-card .left {
+  width: 50%;
+}
+
+.internet-provider-card .left .title {
+  font-size: var(--heading-size);
+
+  font-weight: 700;
+}
+
+.internet-provider-card .left ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.internet-provider-card .left ul li {
+  margin-bottom: 10px;
+}
+.internet-provider-card .price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.internet-provider-card .price-box p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.internet-provider-card .price-box strong {
+  font-size: var(--heading-size2);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.internet-provider-card .price-box .view-plan {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius-secondary);
+  border: 1px solid var(--primary-color);
+  transition: 0.3s ease;
+
+  cursor: pointer;
+  width: fit-content;
+}
+.internet-provider-card .price-box .view-plan:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.internet-provider-card .right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.internet-provider-card .right .image-container .provider-logo {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .internet-provider-card .right .image-container .provider-logo {
+    display: none;
+  }
+  .internet-provider-card .left {
+    width: 100%;
+  }
+}

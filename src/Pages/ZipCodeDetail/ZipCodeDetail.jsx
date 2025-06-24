@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ComparisonTable from "../../Components/ComparisonTable/ComparisonTable";
 import spectrum from "../../Assets/spectrum.png";
 import att from "../../Assets/att.png";
-import dish from "../../Assets/dish.png";
+import cox from "../../Assets/cox.png";
+import xfinity from "../../Assets/xfinity.png";
+import verizon from "../../Assets/verizon.avif";
 import PackagesDetailCard from "../../Components/PackagesDetailCard/PackagesDetailCard";
 import { useParams } from "react-router-dom";
 import ZipBreadcrumb from "./ZipBreadCrumb";
@@ -37,9 +39,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "DISH",
+      provider: "COX",
       availability: "50% available in ",
-      logo: dish,
+      logo: cox,
       speed: "500 Mbps",
       price: "$49.99",
       rating: 4,
@@ -50,9 +52,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "SPECTRUM2",
+      provider: "XFINITY",
       availability: "61% available in ",
-      logo: spectrum,
+      logo: xfinity,
       speed: "245 Mbps",
       price: "$49.99",
       rating: 3,
@@ -63,9 +65,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "AT&T2",
+      provider: "VERIZON",
       availability: "75% available in ",
-      logo: att,
+      logo: verizon,
       speed: "1000 Mbps",
       price: "$49.99",
       rating: 5,
@@ -76,9 +78,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "DISH2",
+      provider: "Xfinity",
       availability: "50% available in ",
-      logo: dish,
+      logo: cox,
       speed: "500 Mbps",
       price: "$49.99",
       rating: 4,
@@ -89,7 +91,7 @@ const ZipCodeDetail = () => {
       ],
     },
   ];
-  const tvProviders = [
+   const tvProviders = [
     {
       provider: "SPECTRUM",
       availability: "61% available in ",
@@ -108,7 +110,7 @@ const ZipCodeDetail = () => {
       availability: "75% available in ",
       logo: att,
       speed: "1000 Mbps",
-      price: "$39.99",
+      price: "$49.99",
       rating: 5,
       features: [
         "Free installation with online orders.",
@@ -117,11 +119,11 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "DISH",
+      provider: "COX",
       availability: "50% available in ",
-      logo: dish,
+      logo: cox,
       speed: "500 Mbps",
-      price: "$29.99",
+      price: "$49.99",
       rating: 4,
       features: [
         "Save $10/month with Auto Pay and paperless billing.",
@@ -130,9 +132,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "SPECTRUM2",
+      provider: "XFINITY",
       availability: "61% available in ",
-      logo: spectrum,
+      logo: xfinity,
       speed: "245 Mbps",
       price: "$49.99",
       rating: 3,
@@ -143,11 +145,11 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "AT&T2",
+      provider: "VERIZON",
       availability: "75% available in ",
       logo: att,
       speed: "1000 Mbps",
-      price: "$39.99",
+      price: "$49.99",
       rating: 5,
       features: [
         "Free installation with online orders.",
@@ -156,9 +158,9 @@ const ZipCodeDetail = () => {
       ],
     },
     {
-      provider: "DISH2",
+      provider: "Xfinity",
       availability: "50% available in ",
-      logo: dish,
+      logo: cox,
       speed: "500 Mbps",
       price: "$49.99",
       rating: 4,

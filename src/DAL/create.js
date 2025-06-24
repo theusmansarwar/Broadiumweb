@@ -1,7 +1,8 @@
-import { invokeApi } from "../Utils/InvokeApi";
+import { invokeApi } from "../Utils/InvokeApi.js";
+
 export const createLead = async (data) => {
   const reqObj = {
-    path: "/CreateLeads",
+    path: "/NetCreateLeads",
     method: "POST",
     headers: {
   
@@ -10,18 +11,7 @@ export const createLead = async (data) => {
   };
   return invokeApi(reqObj);
 };
-export const commentAdd = async (data) => {
-  
-  const reqObj = {
-    path: "/comment/add",
-    method: "POST",
-    headers: {
-  
-    },
-    postData: data,
-  };
-  return invokeApi(reqObj);
-};
+
 export const countView = async () => {
   
   const reqObj = {

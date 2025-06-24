@@ -6,6 +6,7 @@ import "./App.css";
 import NotFound from "./Pages/NotFound/NotFound";
 import Contact from "./Pages/Contact/Contact";
 import Tv from "./Pages/Tv/Tv";
+import Internet from "./Pages/Internet/Internet";
 import Streaming from "./Pages/Streaming/Streaming";
 import Bundles from "./Pages/Bundles/Bundles";
 import ZipCodeDetail from "./Pages/ZipCodeDetail/ZipCodeDetail";
@@ -34,6 +35,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/tv" element={<Tv />} />
+          <Route path="/internet" element={<Internet />} />
           <Route path="/streaming" element={<Streaming />} />
           <Route path="/bundles" element={<Bundles />} />
           <Route
